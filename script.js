@@ -379,6 +379,48 @@
   });
 
   /* ---------------------------------------------------------------------------
+     AI balance mock — animate power bar on reveal
+  --------------------------------------------------------------------------- */
+  const balanceUi = $('.ui--balance');
+  if (balanceUi && !prefersReduced) {
+    const balanceIO = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            balanceUi.classList.add('is-animated');
+            balanceIO.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.45 }
+    );
+    balanceIO.observe(balanceUi);
+  } else if (balanceUi) {
+    balanceUi.classList.add('is-animated');
+  }
+
+  /* ---------------------------------------------------------------------------
+     AI section — animate pipeline card on reveal
+  --------------------------------------------------------------------------- */
+  const aiCard = $('#aiCard');
+  if (aiCard && !prefersReduced) {
+    const aiIO = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            aiCard.classList.add('is-live');
+            aiIO.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+    aiIO.observe(aiCard);
+  } else if (aiCard) {
+    aiCard.classList.add('is-live');
+  }
+
+  /* ---------------------------------------------------------------------------
      Smooth anchor scroll with nav offset
   --------------------------------------------------------------------------- */
   $$('a[href^="#"]').forEach((link) => {

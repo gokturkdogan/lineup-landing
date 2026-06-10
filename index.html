@@ -40,6 +40,7 @@
       <nav class="nav__links" aria-label="Bölümler">
         <a href="#problem">Neden?</a>
         <a href="#features">Özellikler</a>
+        <a href="#ai">AI</a>
         <a href="#preview">Uygulama</a>
         <a href="#how">Nasıl Çalışır</a>
         <a href="#card">Kartlar</a>
@@ -55,6 +56,7 @@
     <div class="nav__mobile" id="navMobile">
       <a href="#problem">Neden?</a>
       <a href="#features">Özellikler</a>
+      <a href="#ai">AI</a>
       <a href="#preview">Uygulama</a>
       <a href="#how">Nasıl Çalışır</a>
       <a href="#card">Kartlar</a>
@@ -80,8 +82,16 @@
         </h1>
 
         <p class="hero__lead" data-reveal>
-          Maç, kadro, istatistik ve FIFA kartları — tek uygulamada.
+          Basit bir planlama aracından derin istatistik platformuna — ihtiyacın kadarını kullan.
         </p>
+
+        <div class="hero__scale" data-reveal aria-label="Kullanım seviyesi">
+          <span class="hero__scale-item hero__scale-item--light">Maç oluştur &amp; organize et</span>
+          <span class="hero__scale-track" aria-hidden="true"><span></span></span>
+          <span class="hero__scale-item hero__scale-item--deep">Kart, istatistik &amp; AI</span>
+        </div>
+
+        <p class="hero__note" data-reveal>Hepsini açmak zorunda değilsin. Sadece haftalık maçı planlamak isteyenler için de tasarlandı.</p>
 
         <div class="hero__actions" data-reveal>
           <a href="#features" class="btn btn--solid btn--lg">Keşfet</a>
@@ -114,12 +124,14 @@
         <span>FIFA KARTLARI</span><span class="dot">•</span>
         <span>İSTATİSTİK</span><span class="dot">•</span>
         <span>PUANLAMA</span><span class="dot">•</span>
+        <span>AI DENGELİ KADRO</span><span class="dot">•</span>
         <span>ORGANİZASYON</span><span class="dot">•</span>
         <span>HALI SAHA</span><span class="dot">•</span>
         <span>KADRO TAHTASI</span><span class="dot">•</span>
         <span>FIFA KARTLARI</span><span class="dot">•</span>
         <span>İSTATİSTİK</span><span class="dot">•</span>
         <span>PUANLAMA</span><span class="dot">•</span>
+        <span>AI DENGELİ KADRO</span><span class="dot">•</span>
         <span>ORGANİZASYON</span><span class="dot">•</span>
       </div>
     </div>
@@ -130,7 +142,7 @@
         <header class="section__head" data-reveal>
           <span class="section__eyebrow">Tanıdık geldi mi?</span>
           <h2 class="section__title">Her hafta aynı film.</h2>
-          <p class="section__sub">WhatsApp grubunda yüzlerce mesaj, eksik kadro, kaybolan paralar ve "kim gol attı?" tartışmaları. LineUp bu kaosu bitiriyor.</p>
+          <p class="section__sub">WhatsApp grubunda yüzlerce mesaj, eksik kadro, kaybolan paralar… LineUp bu kaosu bitiriyor — ister sadece maç planla, ister tüm özelliklere in.</p>
         </header>
 
         <div class="problem__grid">
@@ -142,6 +154,7 @@
               <li>Parayı kim topladı, kim ödemedi?</li>
               <li>Gol/asist kayıtları kayıp</li>
               <li>Kim iyi oynadı tartışması bitmez</li>
+              <li>Güçlü oyuncular hep aynı tarafta — maç adil değil</li>
             </ul>
           </div>
 
@@ -151,15 +164,24 @@
 
           <div class="problem__col problem__col--order" data-reveal>
             <div class="problem__tag problem__tag--good">LineUp ile</div>
+            <p class="problem__minimum">Minimum: maç oluştur, katılım topla — bu kadar.</p>
             <ul class="problem__list">
               <li>Tek tıkla katılım: Geliyorum / Gelmiyorum</li>
-              <li>Sürükle-bırak kadro tahtası</li>
-              <li>Maç, skor ve istatistik otomatik</li>
-              <li>Her oyuncuya FIFA tarzı kart</li>
-              <li>Maç sonu adil puanlama</li>
+              <li>Maç tarihi, saat ve konum tek yerde</li>
+              <li>İstersen kadro tahtası ve anında paylaşım</li>
+              <li>İstersen skor, istatistik ve FIFA kartı</li>
+              <li>İstersen maç sonu puanlama</li>
+              <li>İstersen AI ile dengeli takım bölme</li>
             </ul>
           </div>
         </div>
+
+        <p class="scale-note" data-reveal>
+          <strong>Basit planlama aracı</strong>
+          <span class="scale-note__sep" aria-hidden="true">→</span>
+          <strong>derin istatistik platformu</strong>
+          — hangisini istersen. Tüm özellikler zorunlu değil.
+        </p>
       </div>
     </section>
 
@@ -169,7 +191,7 @@
         <header class="section__head" data-reveal>
           <span class="section__eyebrow">Özellikler</span>
           <h2 class="section__title">Takımını profesyonel gibi yönet.</h2>
-          <p class="section__sub">Amatör ruh, profesyonel düzen. İhtiyacın olan her şey tek uygulamada.</p>
+          <p class="section__sub">Modüller isteğe bağlı — organizasyonla başla; kadro, kart ve istatistik sen hazır olunca devreye girer.</p>
         </header>
 
         <div class="features__grid">
@@ -212,13 +234,138 @@
       </div>
     </section>
 
+    <!-- ===== AI ===== -->
+    <section class="ai section" id="ai">
+      <div class="ai__bg" aria-hidden="true">
+        <div class="ai__glow"></div>
+        <div class="ai__mesh"></div>
+      </div>
+
+      <div class="container ai__wrap">
+        <header class="section__head" data-reveal>
+          <span class="section__eyebrow ai__eyebrow">
+            <span class="ai__badge">AI</span>
+            Akıllı kadro motoru
+          </span>
+          <h2 class="section__title">Güçlü oyuncuları eşit dağıt.<br />Maç adil oynansın.</h2>
+          <p class="section__sub">LineUp AI; FIFA kartını, maç puanlarını ve istatistiklerini okuyarak A ve B takımlarını saniyeler içinde dengeler. Tamamen opsiyonel — sadece maç organize etmek için şart değil.</p>
+        </header>
+
+        <div class="ai__hero">
+          <div class="ai__story" data-reveal>
+            <blockquote class="ai__quote">"Bu hafta yine aynı takımdasınız."</blockquote>
+            <p class="ai__quote-answer">Her halı saha grubunun klasik cümlesi. LineUp AI bunu çözer: güçlü isimleri eşit paylaştırır, mevkilere göre diziliş önerir, tartışmayı bitirir.</p>
+
+            <ul class="ai__points">
+              <li>
+                <span class="ai__point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h16"/><rect x="6" y="12" width="3" height="5" rx="1"/><rect x="11" y="8" width="3" height="9" rx="1"/><rect x="16" y="14" width="3" height="3" rx="1"/></svg></span>
+                <div><strong>Birleşik güç skoru</strong><span>Kart puanı + maç ortalaması + gol/asist tek skorda birleşir.</span></div>
+              </li>
+              <li>
+                <span class="ai__point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.828L3 3"/><path d="m21 3-7.828 7.828A4 4 0 0 0 12 13.7V22"/></svg></span>
+                <div><strong>Adil takım bölme</strong><span>Güçlü oyuncular A ve B arasında eşit dağıtılır; fark %3'ün altında kalır.</span></div>
+              </li>
+              <li>
+                <span class="ai__point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2.3"/></svg></span>
+                <div><strong>Diziliş önerisi</strong><span>Mevkilere göre sahaya yerleştirilmiş kadro; tek tıkla kadro tahtasına aktarılır.</span></div>
+              </li>
+            </ul>
+
+            <div class="ai__metrics">
+              <div class="ai__metric">
+                <strong data-count="97">0</strong>
+                <span>% dengeli kadro</span>
+              </div>
+              <div class="ai__metric">
+                <strong>&lt;5 sn</strong>
+                <span>öneri süresi</span>
+              </div>
+              <div class="ai__metric">
+                <strong>4+</strong>
+                <span>veri kaynağı</span>
+              </div>
+            </div>
+
+            <a href="#preview-balance" class="btn btn--solid btn--lg ai__cta">Ekranda gör</a>
+          </div>
+
+          <div class="ai__visual" data-reveal aria-hidden="true">
+            <div class="ai__card" id="aiCard">
+              <p class="ai__card-label">LineUp AI · kadro analizi</p>
+
+              <div class="ai__inputs">
+                <span class="ai__input">FIFA kartı</span>
+                <span class="ai__input">Maç puanı</span>
+                <span class="ai__input">Gol / asist</span>
+                <span class="ai__input">Mevki</span>
+              </div>
+
+              <div class="ai__flow" aria-hidden="true">
+                <span class="ai__flow-line"></span>
+                <span class="ai__flow-line"></span>
+                <span class="ai__flow-line"></span>
+                <span class="ai__flow-line"></span>
+              </div>
+
+              <div class="ai__engine">
+                <div class="ai__engine-ring"></div>
+                <div class="ai__engine-core">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3a4 4 0 0 1 4 4v1.5"/><path d="M8 7a4 4 0 0 1 4-4"/><path d="M12 21a8 8 0 0 0 8-8c0-2.2-.9-4.2-2.3-5.7"/><path d="M4 13a8 8 0 0 0 8 8"/><path d="M9 14.5 11 17l4-4.5"/></svg>
+                  <span>AI motoru</span>
+                </div>
+              </div>
+
+              <div class="ai__output">
+                <div class="ai__teams">
+                  <div class="ai__team ai__team--a">
+                    <span>Takım A</span>
+                    <strong>428</strong>
+                    <small>güç puanı</small>
+                  </div>
+                  <span class="ai__output-vs">VS</span>
+                  <div class="ai__team ai__team--b">
+                    <span>Takım B</span>
+                    <strong>431</strong>
+                    <small>güç puanı</small>
+                  </div>
+                </div>
+                <div class="ai__balance-bar">
+                  <span class="ai__balance-fill-a"></span>
+                  <span class="ai__balance-fill-b"></span>
+                </div>
+                <p class="ai__balance-label"><span class="ai__balance-pill">%97 dengeli</span> · öneri hazır</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ai__steps">
+          <article class="ai__step" data-reveal>
+            <span class="ai__step-no">01</span>
+            <h3>Veriyi oku</h3>
+            <p>Her oyuncunun kartı, maç performansı ve mevki bilgisi otomatik toplanır.</p>
+          </article>
+          <article class="ai__step" data-reveal>
+            <span class="ai__step-no">02</span>
+            <h3>Eşit böl</h3>
+            <p>Güçlü isimler A ve B takımlarına dengeli dağıtılır; fark anlık gösterilir.</p>
+          </article>
+          <article class="ai__step" data-reveal>
+            <span class="ai__step-no">03</span>
+            <h3>Diz &amp; paylaş</h3>
+            <p>Öneriyi uygula, kadro tahtasına aktar; herkes güncel dizilişi görür.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== APP PREVIEW ===== -->
     <section class="preview section" id="preview">
       <div class="container">
         <header class="section__head" data-reveal>
           <span class="section__eyebrow">Uygulama</span>
           <h2 class="section__title">Gerçek ekranlar, gerçek düzen.</h2>
-          <p class="section__sub">Mobil-first arayüz — sahada kullanmak için tasarlandı.</p>
+          <p class="section__sub">Mobil-first arayüz — her ekran ayrı bir modül. Kullandığın kadarı senin LineUp'ın.</p>
         </header>
       </div>
 
@@ -397,6 +544,81 @@
                 <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><strong>Misafir oyuncu</strong><span>Kulübe kayıtlı olmayan fill-in oyuncuları maça ekle.</span></div></li>
                 <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></span><div><strong>Anında paylaşım</strong><span>Diziliş hazır olunca kadro herkese net ve görsel olarak ulaşır.</span></div></li>
                 <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span><div><strong>Yönetici kontrolü</strong><span>Maç sahibi kadroyu düzenler; oyuncular dizilişi görüntüler.</span></div></li>
+                <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3a4 4 0 0 1 4 4v1.5"/><path d="M8 7a4 4 0 0 1 4-4"/><path d="M12 21a8 8 0 0 0 8-8c0-2.2-.9-4.2-2.3-5.7"/><path d="M4 13a8 8 0 0 0 8 8"/><path d="M9 14.5 11 17l4-4.5"/></svg></span><div><strong>AI denge modu</strong><span>Güçlü oyuncuları eşit bölen öneri — aşağıdaki ekranda detaylı.</span></div></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="screen-block screen-block--reverse" id="preview-balance" data-reveal>
+          <div class="container screen-block__inner">
+            <div class="screen-block__phone">
+              <figure class="phone phone--solo">
+                <div class="phone__shell">
+                  <div class="phone__screen ui ui--balance" aria-hidden="true">
+                    <p class="ui__title">Kadro Tahtası</p>
+                    <div class="ui__balance-ai">
+                      <div class="ui__balance-ai-head">
+                        <span class="ui__balance-ai-badge">AI</span>
+                        <span class="ui__balance-ai-title">Denge önerisi</span>
+                        <span class="ui__balance-ai-pill" id="balancePill">%97 dengeli</span>
+                      </div>
+                      <p class="ui__balance-ai-desc">Kart puanı, maç ortalaması ve mevkiye göre eşit dağıtım.</p>
+                      <div class="ui__balance-scores">
+                        <div class="ui__balance-team ui__balance-team--a">
+                          <span class="ui__balance-team-label">Takım A</span>
+                          <strong class="ui__balance-team-power">428</strong>
+                          <span class="ui__balance-team-sub">güç</span>
+                        </div>
+                        <span class="ui__balance-vs">VS</span>
+                        <div class="ui__balance-team ui__balance-team--b">
+                          <span class="ui__balance-team-label">Takım B</span>
+                          <strong class="ui__balance-team-power">431</strong>
+                          <span class="ui__balance-team-sub">güç</span>
+                        </div>
+                      </div>
+                      <div class="ui__balance-bar" aria-hidden="true">
+                        <span class="ui__balance-bar-a" id="balanceBarA"></span>
+                        <span class="ui__balance-bar-b" id="balanceBarB"></span>
+                      </div>
+                      <button class="ui__balance-cta" type="button">Öneriyi uygula</button>
+                    </div>
+                    <div class="ui__pitch ui__pitch--balance">
+                      <span class="ui__dot ui__dot--h ui__dot--tag" style="--x:22%;--y:22%">G 87</span>
+                      <span class="ui__dot ui__dot--h ui__dot--tag" style="--x:50%;--y:32%">E 84</span>
+                      <span class="ui__dot ui__dot--h ui__dot--tag" style="--x:78%;--y:22%">C 82</span>
+                      <span class="ui__dot ui__dot--a ui__dot--tag" style="--x:28%;--y:72%">M 81</span>
+                      <span class="ui__dot ui__dot--a ui__dot--tag" style="--x:50%;--y:78%">B 79</span>
+                      <span class="ui__dot ui__dot--a ui__dot--tag" style="--x:72%;--y:72%">K 78</span>
+                    </div>
+                    <div class="ui__balance-roster">
+                      <div class="ui__balance-col">
+                        <span class="ui__balance-col-label ui__balance-col-label--a">Takım A</span>
+                        <span class="ui__balance-chip ui__balance-chip--a">Göktürk <b>87</b></span>
+                        <span class="ui__balance-chip ui__balance-chip--a">Emre <b>84</b></span>
+                        <span class="ui__balance-chip ui__balance-chip--a">Can <b>82</b></span>
+                      </div>
+                      <div class="ui__balance-col">
+                        <span class="ui__balance-col-label ui__balance-col-label--b">Takım B</span>
+                        <span class="ui__balance-chip ui__balance-chip--b">Murat <b>81</b></span>
+                        <span class="ui__balance-chip ui__balance-chip--b">Burak <b>79</b></span>
+                        <span class="ui__balance-chip ui__balance-chip--b">Kerem <b>78</b></span>
+                      </div>
+                    </div>
+                    <div class="ui__nav"></div>
+                  </div>
+                </div>
+              </figure>
+            </div>
+            <div class="screen-block__copy">
+              <span class="screen-block__eyebrow">AI Analiz</span>
+              <h3 class="screen-block__title">Eşit kadro, adil maç</h3>
+              <p class="screen-block__lead">Her hafta aynı tartışma: "Yine aynı takımda toplandınız." LineUp, oyuncu gücünü analiz ederek A ve B takımlarını dengeli böler, dizilişi önerir.</p>
+              <ul class="screen-block__features">
+                <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h16"/><rect x="6" y="12" width="3" height="5" rx="1"/><rect x="11" y="8" width="3" height="9" rx="1"/><rect x="16" y="14" width="3" height="3" rx="1"/></svg></span><div><strong>Güç skoru analizi</strong><span>FIFA kartı, maç puanı ve gol/asist verileri birleşik güç puanına dönüşür.</span></div></li>
+                <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.828L3 3"/><path d="m21 3-7.828 7.828A4 4 0 0 0 12 13.7V22"/></svg></span><div><strong>Denge göstergesi</strong><span>Takım güç farkı yüzde olarak gösterilir; %95+ yeşil, adil maç garantisi.</span></div></li>
+                <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2.3"/></svg></span><div><strong>Diziliş önerisi</strong><span>Mevkilere göre sahaya yerleştirilmiş öneri; sürükle-bırak ile ince ayar yap.</span></div></li>
+                <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></span><div><strong>Tek tık uygula</strong><span>Öneriyi onayla, kadro tahtasına aktar; herkes anında güncel dizilişi görür.</span></div></li>
               </ul>
             </div>
           </div>
@@ -655,7 +877,7 @@
         <header class="section__head" data-reveal>
           <span class="section__eyebrow">Nasıl Çalışır</span>
           <h2 class="section__title">Sahaya 6 adımda çık.</h2>
-          <p class="section__sub">Kurulumdan ilk maça kadar, dakikalar içinde.</p>
+          <p class="section__sub">İlk maç için birkaç adım yeter; kadro, istatistik ve kartlar senin tempona göre devreye girer.</p>
         </header>
 
         <ol class="steps">
@@ -673,7 +895,7 @@
           </li>
           <li class="step" data-reveal>
             <span class="step__no">04</span>
-            <div class="step__body"><h3>Kadroyu diz</h3><p>Sürükle-bırak tahtada takımları sahaya yerleştir.</p></div>
+            <div class="step__body"><h3>Kadroyu diz</h3><p>AI denge önerisini uygula veya sürükle-bırak ile takımları sahaya yerleştir.</p></div>
           </li>
           <li class="step" data-reveal>
             <span class="step__no">05</span>
@@ -854,7 +1076,7 @@
       <div class="container stats__grid">
         <div class="stat" data-reveal>
           <span class="stat__num"><span data-count="6">0</span></span>
-          <span class="stat__label">Güçlü modül</span>
+          <span class="stat__label">Opsiyonel modül</span>
         </div>
         <div class="stat" data-reveal>
           <span class="stat__num"><span data-count="100">0</span>%</span>
@@ -877,7 +1099,7 @@
       <div class="container cta__inner" data-reveal>
         <img src="assets/logo-white.png" alt="" class="cta__logo" />
         <h2 class="cta__title">Sahaya çıkmaya hazır mısın?</h2>
-        <p class="cta__sub">LineUp çok yakında. İlk düdüğü kaçırma — bizi takip et, lansmanı duy.</p>
+        <p class="cta__sub">LineUp çok yakında. Basit başla veya tüm özellikleri keşfet — senin ritmine uyum sağlar. İlk düdüğü kaçırma.</p>
 
         <form class="cta__form" id="ctaForm" novalidate>
           <input type="email" id="ctaEmail" placeholder="E-posta adresin" aria-label="E-posta adresin" required />
