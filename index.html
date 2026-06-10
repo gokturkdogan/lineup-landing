@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#064e3b" />
+
+  <title>LineUp — Halı saha kaosu bitiyor</title>
+  <meta name="description" content="Yıl 2026. Halı saha kadrosu hâlâ WhatsApp'tan mı kuruluyor? Lineşu floatUp ile kulübünü kur, maç organize et, kadronu sahaya diz, FIFA kartı kazandır. Çok yakında." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LineUp — Kaos Bitiyor." />
+  <meta property="og:description" content="Halı saha kadrosu artık WhatsApp'ta değil. Maç organizasyonu, kadro tahtası, FIFA kartları ve istatistikler tek uygulamada. Çok yakında." />
+  <meta property="og:image" content="assets/instagram-teaser.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="assets/logo-green.png" />
+  <link rel="apple-touch-icon" href="assets/logo-green.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__brand" aria-label="LineUp ana sayfa">
+        <img src="assets/logo-white.png" alt="" class="nav__logo" />
+        <span class="nav__name">LINE<span>UP</span></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Bölümler">
+        <a href="#problem">Neden?</a>
+        <a href="#features">Özellikler</a>
+        <a href="#how">Nasıl Çalışır</a>
+        <a href="#card">Kartlar</a>
+      </nav>
+
+      <a href="#cta" class="btn btn--solid nav__cta">Çok Yakında</a>
+
+      <button class="nav__burger" id="navBurger" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="navMobile">
+      <a href="#problem">Neden?</a>
+      <a href="#features">Özellikler</a>
+      <a href="#how">Nasıl Çalışır</a>
+      <a href="#card">Kartlar</a>
+      <a href="#cta" class="btn btn--solid">Çok Yakında</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <canvas class="hero__canvas" id="netCanvas" aria-hidden="true"></canvas>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__pitch-lines" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <span class="badge" data-reveal>
+          <span class="badge__dot"></span> Çok Yakında · 2026
+        </span>
+
+        <h1 class="hero__title" data-reveal>
+          Halı sahada<br />
+          <span class="hero__accent">kaos bitiyor.</span>
+        </h1>
+
+        <p class="hero__lead" data-reveal>
+          Maç, kadro, istatistik ve FIFA kartları — tek uygulamada.
+        </p>
+
+        <div class="hero__actions" data-reveal>
+          <a href="#features" class="btn btn--solid btn--lg">Keşfet</a>
+          <a href="#how" class="btn btn--ghost btn--lg">Nasıl Çalışır?</a>
+        </div>
+
+        <div class="hero__hint" data-reveal aria-hidden="true">
+          <span class="hero__mouse"><span></span></span>
+          Kaydır
+        </div>
+      </div>
+
+      <!-- Floating decorative cards -->
+      <div class="hero__float hero__float--1" data-float aria-hidden="true">
+        <div class="chip"><span class="chip__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9V4Z"/><path d="m9 12 2 2 4-4"/></svg></span> Kadro hazır</div>
+      </div>
+      <div class="hero__float hero__float--2" data-float aria-hidden="true">
+        <div class="chip"><span class="chip__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m12 7.4 3.6 2.6-1.4 4.3H9.8L8.4 10 12 7.4Z"/><path d="M12 3v4.4M21 10.4l-5.4 4M3 10.4l5.4 4M7.3 20.2 9.8 14.3M16.7 20.2l-2.5-5.9"/></svg></span> Gol: Göktürk</div>
+      </div>
+      <div class="hero__float hero__float--3" data-float aria-hidden="true">
+        <div class="chip chip--accent"><span class="chip__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3.5 2.6 5.3 5.8.9-4.2 4.1 1 5.8L12 17l-5.2 2.6 1-5.8-4.2-4.1 5.8-.9L12 3.5Z"/></svg></span> 8.4 puan</div>
+      </div>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>HALI SAHA</span><span class="dot">•</span>
+        <span>KADRO TAHTASI</span><span class="dot">•</span>
+        <span>FIFA KARTLARI</span><span class="dot">•</span>
+        <span>İSTATİSTİK</span><span class="dot">•</span>
+        <span>PUANLAMA</span><span class="dot">•</span>
+        <span>ORGANİZASYON</span><span class="dot">•</span>
+        <span>HALI SAHA</span><span class="dot">•</span>
+        <span>KADRO TAHTASI</span><span class="dot">•</span>
+        <span>FIFA KARTLARI</span><span class="dot">•</span>
+        <span>İSTATİSTİK</span><span class="dot">•</span>
+        <span>PUANLAMA</span><span class="dot">•</span>
+        <span>ORGANİZASYON</span><span class="dot">•</span>
+      </div>
+    </div>
+
+    <!-- ===== PROBLEM ===== -->
+    <section class="problem section" id="problem">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="section__eyebrow">Tanıdık geldi mi?</span>
+          <h2 class="section__title">Her hafta aynı film.</h2>
+          <p class="section__sub">WhatsApp grubunda yüzlerce mesaj, eksik kadro, kaybolan paralar ve "kim gol attı?" tartışmaları. LineUp bu kaosu bitiriyor.</p>
+        </header>
+
+        <div class="problem__grid">
+          <div class="problem__col problem__col--chaos" data-reveal>
+            <div class="problem__tag problem__tag--bad">WhatsApp ile</div>
+            <ul class="problem__list">
+              <li>"Bu hafta kimler var?" — 80 mesaj</li>
+              <li>Kadro son ana kadar belli değil</li>
+              <li>Parayı kim topladı, kim ödemedi?</li>
+              <li>Gol/asist kayıtları kayıp</li>
+              <li>Kim iyi oynadı tartışması bitmez</li>
+            </ul>
+          </div>
+
+          <div class="problem__vs" aria-hidden="true">
+            <span>VS</span>
+          </div>
+
+          <div class="problem__col problem__col--order" data-reveal>
+            <div class="problem__tag problem__tag--good">LineUp ile</div>
+            <ul class="problem__list">
+              <li>Tek tıkla katılım: Geliyorum / Gelmiyorum</li>
+              <li>Sürükle-bırak kadro tahtası</li>
+              <li>Maç, skor ve istatistik otomatik</li>
+              <li>Her oyuncuya FIFA tarzı kart</li>
+              <li>Maç sonu adil puanlama</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features section" id="features">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="section__eyebrow">Özellikler</span>
+          <h2 class="section__title">Takımını profesyonel gibi yönet.</h2>
+          <p class="section__sub">Amatör ruh, profesyonel düzen. İhtiyacın olan her şey tek uygulamada.</p>
+        </header>
+
+        <div class="features__grid">
+          <article class="feature-card" data-reveal data-tilt>
+            <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 5.3a3 3 0 0 1 0 5.4"/><path d="M17.8 14.1A5.5 5.5 0 0 1 20.5 19"/></svg></div>
+            <h3>Organizasyon</h3>
+            <p>Kulübünü kur, oyuncuları davet linkiyle çağır, herkesi tek çatı altında topla.</p>
+          </article>
+
+          <article class="feature-card" data-reveal data-tilt>
+            <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M7.5 13.5h2M11 13.5h2M14.5 13.5h2M7.5 17h2M11 17h2"/></svg></div>
+            <h3>Maç Yönetimi</h3>
+            <p>Maç oluştur, katılımı tek tıkla topla, geri sayımla herkesi hazır tut.</p>
+          </article>
+
+          <article class="feature-card feature-card--wide" data-reveal data-tilt>
+            <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2.3"/><path d="M3 9h2.6v6H3M21 9h-2.6v6H21"/></svg></div>
+            <h3>Kadro Tahtası</h3>
+            <p>Oyuncuları sürükle-bırak ile sahaya diz. Misafir oyuncu ekle, dizilişi anında paylaş.</p>
+          </article>
+
+          <article class="feature-card" data-reveal data-tilt>
+            <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="11" r="2"/><path d="M5.4 16.6a3.2 3.2 0 0 1 6.2 0"/><path d="M14.5 9.5h3.5M14.5 12.5h3.5M14.5 15.5h2.5"/></svg></div>
+            <h3>FIFA Kartları</h3>
+            <p>Her oyuncunun PAC, SHO, PAS, DRI, DEF, PHY değerleriyle kendi kartı.</p>
+          </article>
+
+          <article class="feature-card" data-reveal data-tilt>
+            <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><rect x="5.5" y="11" width="3" height="6" rx="1"/><rect x="10.5" y="7" width="3" height="10" rx="1"/><rect x="15.5" y="13" width="3" height="4" rx="1"/></svg></div>
+            <h3>İstatistikler</h3>
+            <p>Gol, asist, kazanma oranı, ortalama puan ve katılım — hepsi otomatik.</p>
+          </article>
+
+          <article class="feature-card" data-reveal data-tilt>
+            <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3.5 2.6 5.3 5.8.9-4.2 4.1 1 5.8L12 17l-5.2 2.6 1-5.8-4.2-4.1 5.8-.9L12 3.5Z"/></svg></div>
+            <h3>Puanlama</h3>
+            <p>Maç sonrası oyuncular birbirini puanlasın, en iyiler zirveye çıksın.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="how section" id="how">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="section__eyebrow">Nasıl Çalışır</span>
+          <h2 class="section__title">Sahaya 6 adımda çık.</h2>
+          <p class="section__sub">Kurulumdan ilk maça kadar, dakikalar içinde.</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step" data-reveal>
+            <span class="step__no">01</span>
+            <div class="step__body"><h3>Kulübünü kur</h3><p>Kayıt ol, organizasyonunu oluştur ve yönetici ol.</p></div>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__no">02</span>
+            <div class="step__body"><h3>Oyuncuları davet et</h3><p>Davet linkini paylaş, kadron saniyeler içinde dolsun.</p></div>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__no">03</span>
+            <div class="step__body"><h3>Maç oluştur</h3><p>Tarih, saat ve konum gir; katılım otomatik toplansın.</p></div>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__no">04</span>
+            <div class="step__body"><h3>Kadroyu diz</h3><p>Sürükle-bırak tahtada takımları sahaya yerleştir.</p></div>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__no">05</span>
+            <div class="step__body"><h3>Oyna &amp; skoru gir</h3><p>Gol ve asistleri kaydet, maç geçmişine işlensin.</p></div>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__no">06</span>
+            <div class="step__body"><h3>Puanla &amp; yüksel</h3><p>Herkes birbirini puanlasın, kartlar ve sıralama güncellensin.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== FIFA CARD + PITCH ===== -->
+    <section class="showcase section" id="card">
+      <div class="container showcase__inner">
+        <div class="showcase__text" data-reveal>
+          <span class="section__eyebrow">Oyuncu Kartları</span>
+          <h2 class="section__title">Her maç, kartını büyüt.</h2>
+          <p class="section__sub">Performansın FIFA tarzı kartına yansır. Gol at, asist yap, puan topla; bronzdan altına yüksel. Kartının üzerine gel, çevir.</p>
+          <ul class="showcase__bullets">
+            <li><span>PAC</span> Hız</li>
+            <li><span>SHO</span> Şut</li>
+            <li><span>PAS</span> Pas</li>
+            <li><span>DRI</span> Çalım</li>
+            <li><span>DEF</span> Defans</li>
+            <li><span>PHY</span> Fizik</li>
+          </ul>
+        </div>
+
+        <div class="showcase__card-wrap" data-reveal>
+          <div class="fifa-card" id="fifaCard" data-tilt-strong>
+            <div class="fifa-card__shine" aria-hidden="true"></div>
+            <div class="fifa-card__top">
+              <div class="fifa-card__ovr">
+                <span class="fifa-card__rating" data-count="87">0</span>
+                <span class="fifa-card__pos">SNT</span>
+                <span class="fifa-card__div"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m12 7.4 3.6 2.6-1.4 4.3H9.8L8.4 10 12 7.4Z"/><path d="M12 3v4.4M21 10.4l-5.4 4M3 10.4l5.4 4M7.3 20.2 9.8 14.3M16.7 20.2l-2.5-5.9"/></svg></span>
+              </div>
+            </div>
+            <div class="fifa-card__photo" aria-hidden="true">
+              <img src="assets/logo-green.png" alt="" />
+            </div>
+            <div class="fifa-card__name">GÖKTÜRK</div>
+            <div class="fifa-card__stats">
+              <div><b data-count="89">0</b><span>PAC</span></div>
+              <div><b data-count="84">0</b><span>SHO</span></div>
+              <div><b data-count="86">0</b><span>PAS</span></div>
+              <div><b data-count="81">0</b><span>DRI</span></div>
+              <div><b data-count="72">0</b><span>DEF</span></div>
+              <div><b data-count="82">0</b><span>PHY</span></div>
+            </div>
+          </div>
+          <div class="fifa-card__floor" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INTERACTIVE PITCH ===== -->
+    <section class="pitch-demo section">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="section__eyebrow">Kadro Tahtası</span>
+          <h2 class="section__title">Sürükle, bırak, diz.</h2>
+          <p class="section__sub">Oyuncularını sahaya yerleştir. Aşağıdaki demoda tokenları sürükleyerek dene.</p>
+        </header>
+
+        <div class="pitch" id="pitch" data-reveal>
+          <div class="pitch__lines" aria-hidden="true">
+            <span class="pitch__center-line"></span>
+            <span class="pitch__center-circle"></span>
+            <span class="pitch__box pitch__box--top"></span>
+            <span class="pitch__box pitch__box--bottom"></span>
+          </div>
+          <!-- tokens injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS BANNER ===== -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat" data-reveal>
+          <span class="stat__num"><span data-count="6">0</span></span>
+          <span class="stat__label">Güçlü modül</span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__num"><span data-count="100">0</span>%</span>
+          <span class="stat__label">Daha az WhatsApp kaosu</span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__num"><span data-count="11">0</span>v<span data-count="11">0</span></span>
+          <span class="stat__label">Her formatta saha</span>
+        </div>
+        <div class="stat" data-reveal>
+          <span class="stat__num">∞</span>
+          <span class="stat__label">Maç keyfi</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta section" id="cta">
+      <canvas class="cta__canvas" id="ctaCanvas" aria-hidden="true"></canvas>
+      <div class="container cta__inner" data-reveal>
+        <img src="assets/logo-white.png" alt="" class="cta__logo" />
+        <h2 class="cta__title">Sahaya çıkmaya hazır mısın?</h2>
+        <p class="cta__sub">LineUp çok yakında. İlk düdüğü kaçırma — bizi takip et, lansmanı duy.</p>
+
+        <form class="cta__form" id="ctaForm" novalidate>
+          <input type="email" id="ctaEmail" placeholder="E-posta adresin" aria-label="E-posta adresin" required />
+          <button type="submit" class="btn btn--solid btn--lg">Beni Haberdar Et</button>
+        </form>
+        <p class="cta__note" id="ctaNote" role="status" aria-live="polite"></p>
+
+        <div class="cta__socials">
+          <a href="https://www.instagram.com/line.up.app" target="_blank" rel="noopener" class="cta__social" aria-label="Instagram'da takip et">
+            <svg class="cta__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            <span>@line.up.app</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#hero" class="footer__brand">
+        <img src="assets/logo-white.png" alt="" />
+        <span>LINE<span>UP</span></span>
+      </a>
+      <p class="footer__tag">Halı saha kaosu bitiyor.</p>
+      <p class="footer__copy">© 2026 LineUp. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
