@@ -82,16 +82,8 @@
         </h1>
 
         <p class="hero__lead" data-reveal>
-          Basit bir planlama aracından derin istatistik platformuna — ihtiyacın kadarını kullan.
+          İster basit planlama aracı, ister derin istatistik platformu.
         </p>
-
-        <div class="hero__scale" data-reveal aria-label="Kullanım seviyesi">
-          <span class="hero__scale-item hero__scale-item--light">Maç oluştur &amp; organize et</span>
-          <span class="hero__scale-track" aria-hidden="true"><span></span></span>
-          <span class="hero__scale-item hero__scale-item--deep">Kart, istatistik &amp; AI</span>
-        </div>
-
-        <p class="hero__note" data-reveal>Hepsini açmak zorunda değilsin. Sadece haftalık maçı planlamak isteyenler için de tasarlandı.</p>
 
         <div class="hero__actions" data-reveal>
           <a href="#features" class="btn btn--solid btn--lg">Keşfet</a>
@@ -170,7 +162,7 @@
               <li>Maç tarihi, saat ve konum tek yerde</li>
               <li>İstersen kadro tahtası ve anında paylaşım</li>
               <li>İstersen skor, istatistik ve FIFA kartı</li>
-              <li>İstersen maç sonu puanlama</li>
+              <li>İstersen maç sonu puanlama &amp; MVP oylaması</li>
               <li>İstersen AI ile dengeli takım bölme</li>
             </ul>
           </div>
@@ -452,7 +444,10 @@
                 <div class="phone__shell">
                   <div class="phone__screen ui ui--profile" aria-hidden="true">
                     <div class="ui__hero ui__hero--short"></div>
-                    <div class="ui__fifa"><span class="ui__ovr">87</span><span class="ui__pos">SNT</span></div>
+                    <div class="ui__fifa">
+                      <span class="ui__ovr">87</span><span class="ui__pos">SNT</span>
+                      <span class="ui__mvp-rozet">4× MVP</span>
+                    </div>
                     <div class="ui__tabs"><span>Hesap</span><span class="is-on">İstatistik</span><span>Geçmiş</span></div>
                     <div class="ui__stats-panel">
                       <div class="ui__stats-summary">
@@ -510,6 +505,7 @@
                 <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="11" r="2"/><path d="M5.4 16.6a3.2 3.2 0 0 1 6.2 0"/></svg></span><div><strong>FIFA oyuncu kartı</strong><span>PAC, SHO, PAS, DRI, DEF, PHY ve genel puanın — bronzdan altına.</span></div></li>
                 <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><div><strong>Hesap bilgileri</strong><span>Ad, mevki, boy, kilo ve hesap ayarlarını düzenle.</span></div></li>
                 <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h16"/><rect x="6" y="12" width="3" height="5" rx="1"/><rect x="11" y="8" width="3" height="9" rx="1"/><rect x="16" y="14" width="3" height="3" rx="1"/></svg></span><div><strong>Sezon istatistikleri</strong><span>Maç, gol, asist, ortalama puan, kazanma ve katılım oranı.</span></div></li>
+                <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 8l4 4 6-7 4 5 6-5 4 7v8H2V8Z"/></svg></span><div><strong>MVP rozeti</strong><span>Seçildiğin maç MVP'leri profilinde ×5 gibi birikir — diğer rozetlerle birlikte.</span></div></li>
                 <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18"/></svg></span><div><strong>Maç geçmişi</strong><span>Oynadığın tüm maçlar kronolojik listede, skor ve performansla.</span></div></li>
               </ul>
             </div>
@@ -624,7 +620,7 @@
           </div>
         </article>
 
-        <article class="screen-block screen-block--reverse" id="preview-players" data-reveal>
+        <article class="screen-block" id="preview-players" data-reveal>
           <div class="container screen-block__inner">
             <div class="screen-block__phone">
               <figure class="phone phone--solo">
@@ -729,7 +725,7 @@
           </div>
         </article>
 
-        <article class="screen-block" id="preview-ratings" data-reveal>
+        <article class="screen-block screen-block--reverse" id="preview-ratings" data-reveal>
           <div class="container screen-block__inner">
             <div class="screen-block__phone">
               <figure class="phone phone--solo">
@@ -740,7 +736,7 @@
                         <span class="ui__ratings-title">Maç oylaması</span>
                         <span class="ui__ratings-save">Kaydet</span>
                       </div>
-                      <p class="ui__ratings-note">Maç bitti — takım arkadaşlarını 1–10 arası puanla.</p>
+                      <p class="ui__ratings-note">Maç bitti — önce puanla, sonra maç MVP'sini seç.</p>
 
                       <div class="ui__ratings-list">
                         <article class="ui__rating-card ui__rating-card--rated">
@@ -792,56 +788,20 @@
                             </div>
                           </div>
                         </article>
+                      </div>
 
-                        <article class="ui__rating-card">
-                          <span class="ui__rating-avatar">B</span>
-                          <div class="ui__rating-body">
-                            <div class="ui__rating-row ui__rating-row--head">
-                              <span class="ui__rating-name">Barış</span>
-                              <span class="ui__rating-badge ui__rating-badge--empty">—</span>
-                            </div>
-                            <div class="ui__rating-row ui__rating-row--meta">
-                              <span class="ui__rating-pos">DEF</span>
-                              <div class="ui__rating-stars">
-                                <span class="ui__rating-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                              </div>
-                            </div>
-                          </div>
-                        </article>
-
-                        <article class="ui__rating-card ui__rating-card--rated">
-                          <span class="ui__rating-avatar">M</span>
-                          <div class="ui__rating-body">
-                            <div class="ui__rating-row ui__rating-row--head">
-                              <span class="ui__rating-name">Mert</span>
-                              <span class="ui__rating-badge ui__rating-badge--high">8</span>
-                            </div>
-                            <div class="ui__rating-row ui__rating-row--meta">
-                              <span class="ui__rating-pos">ORT</span>
-                              <div class="ui__rating-stars">
-                                <span class="ui__rating-star is-filled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star is-filled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star is-filled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star is-filled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star is-filled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star is-filled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star is-filled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star is-filled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                                <span class="ui__rating-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5 14.2 9l5.8.5-4.4 3.8 1.4 5.7L12 16.8 7 18.9l1.4-5.7-4.4-3.8 5.8-.5L12 3.5z"/></svg></span>
-                              </div>
-                            </div>
-                          </div>
-                        </article>
+                      <div class="ui__mvp-block">
+                        <div class="ui__mvp-head">
+                          <span class="ui__mvp-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8l4 4 6-7 4 5 6-5 4 7v8H2V8Z"/></svg> Maç MVP'si</span>
+                          <span class="ui__mvp-meta">1 oy · kendini seçemezsin</span>
+                        </div>
+                        <div class="ui__mvp-picks">
+                          <span class="ui__mvp-pick"><span class="ui__mvp-pick-av">E</span><small>Emre</small></span>
+                          <span class="ui__mvp-pick is-chosen"><span class="ui__mvp-pick-av">C</span><small>Can</small><i class="ui__mvp-pick-check" aria-hidden="true">✓</i></span>
+                          <span class="ui__mvp-pick"><span class="ui__mvp-pick-av">B</span><small>Barış</small></span>
+                          <span class="ui__mvp-pick"><span class="ui__mvp-pick-av">M</span><small>Mert</small></span>
+                        </div>
+                        <p class="ui__mvp-live"><span class="ui__mvp-live-badge">Can önde</span> · <b>5 oy</b></p>
                       </div>
 
                       <div class="ui__ratings-legend" aria-hidden="true">
@@ -857,13 +817,13 @@
             </div>
             <div class="screen-block__copy">
               <span class="screen-block__eyebrow">Maç Sonrası</span>
-              <h3 class="screen-block__title">Adil oyuncu puanlama</h3>
-              <p class="screen-block__lead">Maç biter bitmez herkes takım arkadaşlarını puanlar. Yıldız sistemi, renk kodlu rozetler ve ortalama puan otomatik hesaplanır.</p>
+              <h3 class="screen-block__title">Puanlama &amp; MVP oylaması</h3>
+              <p class="screen-block__lead">Maç biter bitmez herkes takım arkadaşlarını puanlar, ardından maç MVP'sini seçer. Kazanan altın rozet profiline işlenir.</p>
               <ul class="screen-block__features">
                 <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m12 3.5 2.6 5.3 5.8.9-4.2 4.1 1 5.8L12 17l-5.2 2.6 1-5.8-4.2-4.1 5.8-.9L12 3.5Z"/></svg></span><div><strong>1–10 yıldız</strong><span>Her oyuncuya 1 ile 10 arası puan ver; tek dokunuşla seç, tekrar dokunarak kaldır.</span></div></li>
-                <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><strong>Maç sonrası oylama</strong><span>Sadece maça katılanlar birbirini puanlar; kendini puanlayamazsın.</span></div></li>
+                <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 8l4 4 6-7 4 5 6-5 4 7v8H2V8Z"/></svg></span><div><strong>Maç MVP seçimi</strong><span>Herkes 1 oy kullanır; en çok oy alan maçın MVP'si olur, kendini seçemezsin.</span></div></li>
                 <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h16"/><rect x="6" y="12" width="3" height="5" rx="1"/><rect x="11" y="8" width="3" height="9" rx="1"/><rect x="16" y="14" width="3" height="3" rx="1"/></svg></span><div><strong>Renk kodlu rozetler</strong><span>8+ yeşil, 7–7.9 sarı, 6 ve altı kırmızı — performans bir bakışta.</span></div></li>
-                <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><strong>Ortalama puana yansır</strong><span>Verilen puanlar profil istatistiklerine ve FIFA kartına işlenir.</span></div></li>
+                <li><span class="screen-block__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></span><div><strong>Profil rozetleri</strong><span>MVP, gol krallığı ve oyun tarzı rozetleri profilinde birikir — <a href="#badges">rozetler bölümüne bak</a>.</span></div></li>
               </ul>
             </div>
           </div>
@@ -903,7 +863,7 @@
           </li>
           <li class="step" data-reveal>
             <span class="step__no">06</span>
-            <div class="step__body"><h3>Puanla &amp; yüksel</h3><p>Herkes birbirini puanlasın, kartlar ve sıralama güncellensin.</p></div>
+            <div class="step__body"><h3>Puanla &amp; yüksel</h3><p>Herkes birbirini puanlasın, MVP seçsin; rozetler profilinde biriksin.</p></div>
           </li>
         </ol>
       </div>
@@ -1047,6 +1007,65 @@
             </li>
           </ol>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== BADGES ===== -->
+    <section class="badges section" id="badges">
+      <div class="badges__glow" aria-hidden="true"></div>
+      <div class="container badges__wrap">
+        <header class="section__head section__head--compact" data-reveal>
+          <span class="section__eyebrow badges__eyebrow">Rozetler</span>
+          <h2 class="section__title">Profilinde rozetlerini sergile.</h2>
+          <p class="section__sub">MVP, gol krallığı, oyun tarzı — kazandıkların profilde görünür.</p>
+        </header>
+
+        <div class="badges-showcase">
+          <div class="badges-showcase__copy" data-reveal>
+            <ul class="badges-showcase__points">
+              <li><strong>Maç MVP</strong><span>Oylamada seçildikçe sayaç artar — MVP ×5 gibi.</span></li>
+              <li><strong>Sezon rozetleri</strong><span>Gol krallığı gibi dönemsel başarılar.</span></li>
+              <li><strong>Oyun tarzı</strong><span>Oyun kurucu, duvar, panter, bitirici…</span></li>
+            </ul>
+          </div>
+
+          <div class="badges-showcase__visual" data-reveal aria-hidden="true">
+            <article class="badges-card">
+              <div class="badges-card__hero">
+                <div class="badges-card__avatar">G</div>
+                <div class="badges-card__info">
+                  <span class="badges-card__name">Göktürk</span>
+                  <span class="badges-card__meta">SNT · 12 maç</span>
+                </div>
+                <div class="badges-card__featured badges-card__featured--mvp">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 8l4 4 6-7 4 5 6-5 4 7v8H2V8Z"/></svg>
+                  <span>×5</span>
+                  <small>MVP</small>
+                </div>
+              </div>
+
+              <div class="badges-card__mini-card">
+                <span class="badges-card__mini-ovr">87</span>
+                <span class="badges-card__mini-pos">SNT</span>
+                <span class="badges-card__mini-rozet">MVP ×5</span>
+              </div>
+
+              <div class="badges-card__list">
+                <span class="badges-card__list-title">Kazanılan rozetler</span>
+                <ul>
+                  <li><span class="badges-card__icon badges-card__icon--mvp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8l4 4 6-7 4 5 6-5 4 7v8H2V8Z"/></svg></span><span class="badges-card__label">Maç MVP</span><span class="badges-card__val">×5</span></li>
+                  <li><span class="badges-card__icon badges-card__icon--scorer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7.4 3.6 2.6-1.4 4.3H9.8L8.4 10 12 7.4Z"/></svg></span><span class="badges-card__label">Gol Krallığı</span><span class="badges-card__val">Sezon</span></li>
+                  <li><span class="badges-card__icon badges-card__icon--playmaker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/></svg></span><span class="badges-card__label">Oyun Kurucu</span><span class="badges-card__val">Tarz</span></li>
+                  <li><span class="badges-card__icon badges-card__icon--wall"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></span><span class="badges-card__label">Duvar</span><span class="badges-card__val">Tarz</span></li>
+                  <li><span class="badges-card__icon badges-card__icon--panther"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c-1.5 2.5-4 4.5-4 8a4 4 0 0 0 8 0c0-3.5-2.5-5.5-4-8Z"/></svg></span><span class="badges-card__label">Panter</span><span class="badges-card__val">Tarz</span></li>
+                  <li><span class="badges-card__icon badges-card__icon--finisher"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span><span class="badges-card__label">Bitirici</span><span class="badges-card__val">Tarz</span></li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <p class="scale-note scale-note--sm" data-reveal>İsteğe bağlı — rozetler otomatik kazanılır.</p>
       </div>
     </section>
 
