@@ -269,6 +269,116 @@
   }
 
   /* ---------------------------------------------------------------------------
+     Dashboard mock — live countdown ring
+  --------------------------------------------------------------------------- */
+  const dashRing = $('[data-countdown]');
+  if (dashRing && !prefersReduced) {
+    const target = new Date();
+    target.setDate(target.getDate() + ((6 - target.getDay() + 7) % 7 || 7));
+    target.setHours(19, 0, 0, 0);
+    if (target <= new Date()) target.setDate(target.getDate() + 7);
+
+    const hEl = dashRing.querySelector('.ui__ring-h');
+    const mEl = dashRing.querySelector('.ui__ring-m');
+    const sEl = dashRing.querySelector('.ui__ring-s');
+    const pad = (n) => String(n).padStart(2, '0');
+
+    const tick = () => {
+      const diff = Math.max(0, target - Date.now());
+      const total = Math.floor(diff / 1000);
+      if (hEl) hEl.textContent = pad(Math.floor(total / 3600));
+      if (mEl) mEl.textContent = pad(Math.floor((total % 3600) / 60));
+      if (sEl) sEl.textContent = pad(total % 60);
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  /* ---------------------------------------------------------------------------
+     Goal kings — tab switch
+  --------------------------------------------------------------------------- */
+  const SCORERS_DATA = {
+    goals: {
+      label: 'gol',
+      podium: [
+        { rank: 2, name: 'Emre', pos: 'OOS', val: 11, initial: 'E' },
+        { rank: 1, name: 'Göktürk', pos: 'SNT', val: 14, initial: 'G', champion: true },
+        { rank: 3, name: 'Can', pos: 'SNT', val: 9, initial: 'C' },
+      ],
+      list: [
+        { rank: 4, name: 'Barış', pos: 'DEF', val: 7, initial: 'B', pct: 50 },
+        { rank: 5, name: 'Mert', pos: 'ORT', val: 6, initial: 'M', pct: 43 },
+        { rank: 6, name: 'Ali', pos: 'SNT', val: 5, initial: 'A', pct: 36 },
+        { rank: 7, name: 'Kerem', pos: 'OOS', val: 4, initial: 'K', pct: 29 },
+      ],
+    },
+    assists: {
+      label: 'asist',
+      podium: [
+        { rank: 2, name: 'Mert', pos: 'ORT', val: 10, initial: 'M' },
+        { rank: 1, name: 'Can', pos: 'SNT', val: 12, initial: 'C', champion: true },
+        { rank: 3, name: 'Göktürk', pos: 'SNT', val: 8, initial: 'G' },
+      ],
+      list: [
+        { rank: 4, name: 'Emre', pos: 'OOS', val: 6, initial: 'E', pct: 50 },
+        { rank: 5, name: 'Barış', pos: 'DEF', val: 5, initial: 'B', pct: 42 },
+        { rank: 6, name: 'Ali', pos: 'SNT', val: 3, initial: 'A', pct: 25 },
+        { rank: 7, name: 'Kerem', pos: 'OOS', val: 2, initial: 'K', pct: 17 },
+      ],
+    },
+  };
+
+  const scorersPodium = $('#scorersPodium');
+  const scorersList = $('#scorersList');
+  const scorersTabs = $$('[data-scorers-tab]');
+
+  function renderScorers(type) {
+    const data = SCORERS_DATA[type];
+    if (!data || !scorersPodium || !scorersList) return;
+
+    scorersPodium.querySelectorAll('.scorer-podium').forEach((el, i) => {
+      const p = data.podium[i];
+      if (!p) return;
+      el.classList.toggle('is-champion', !!p.champion);
+      el.querySelector('.scorer-podium__rank').textContent = p.rank;
+      el.querySelector('.scorer-podium__avatar').textContent = p.initial;
+      el.querySelector('.scorer-podium__name').textContent = p.name;
+      el.querySelector('.scorer-podium__pos').textContent = p.pos;
+      const statEl = el.querySelector('.scorer-podium__stat');
+      const start = prefersReduced ? p.val : '0';
+      statEl.innerHTML = `<b data-count="${p.val}">${start}</b> ${data.label}`;
+    });
+
+    scorersList.innerHTML = data.list.map((r) => `
+      <li class="scorer-row">
+        <span class="scorer-row__rank">${r.rank}</span>
+        <div class="scorer-row__avatar" aria-hidden="true">${r.initial}</div>
+        <div class="scorer-row__info">
+          <span class="scorer-row__name">${r.name}</span>
+          <span class="scorer-row__pos">${r.pos}</span>
+        </div>
+        <div class="scorer-row__bar-wrap" aria-hidden="true"><span class="scorer-row__bar" style="--pct:${r.pct}%"></span></div>
+        <span class="scorer-row__val"><b data-count="${r.val}">0</b></span>
+      </li>
+    `).join('');
+
+    scorersPodium.querySelectorAll('[data-count]').forEach((el) => animateCount(el));
+    scorersList.querySelectorAll('[data-count]').forEach((el) => animateCount(el));
+  }
+
+  scorersTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const type = tab.dataset.scorersTab;
+      scorersTabs.forEach((t) => {
+        const active = t === tab;
+        t.classList.toggle('is-active', active);
+        t.setAttribute('aria-selected', String(active));
+      });
+      renderScorers(type);
+    });
+  });
+
+  /* ---------------------------------------------------------------------------
      Smooth anchor scroll with nav offset
   --------------------------------------------------------------------------- */
   $$('a[href^="#"]').forEach((link) => {
